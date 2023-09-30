@@ -1,0 +1,19 @@
+{
+  "name": "Help me out",
+  "description": "A chrome extension that helps you to take a screen record ..",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action":{
+    "default_popup":"popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches":["<all_urls>"],
+      "js":["content.js"]
+    }
+  ],
+  "permissions": ["tabs", "activeTab", "desktopCapture"]
+}
